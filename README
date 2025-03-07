@@ -1,0 +1,35 @@
+To use this script, you must create a games.json file.
+Games will be split in two types: those who have their savefile in a subfolder of Users/[your_username] (listed under "user_related") and those who don't (listed under "public").
+You should fill the json file like this:
+
+game_title: purely cosmetic, it will be shown in the logs
+for user_related games:
+location_start: the first half of the location for the files, that comes before your username (it will most likely be C:/Users/)
+location_end: the last half of the location for the files, that comes after your username
+folder: the name of the folder itself that contains all the save/configuration files
+for public games:
+location: the full location of the files
+folder: the name of the folder itself that contains all the save/configuration files
+
+{
+  "user_related": {
+    "game_title" : {
+      "location_start" : "location_start",
+      "location_end" : "location_end",
+      "folder": "folder"
+    },
+    "game_example" : {
+      "location_start" : "C:/Users/",
+      "location_end" : "/AppData/Roaming/Saves/",
+      "folder": "steamid"
+    }
+  },
+  "public": {
+    "game_title" : {
+      "location" : "full_location",
+      "folder": "folder"
+    }
+  }
+}
+
+At launch the script will ask for your username (as seen in C:\Users) to complete the location of the files. Then you can select import or export.
